@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <!-- Cargar la fuente de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #ffe4e1;
+            background-image: url('https://img.freepik.com/fotos-premium/arbol-amor-fondo-amor-rojo_1325059-6065.jpg?w=996'); /* Ruta de tu imagen de fondo */
+            background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que se repita la imagen */
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #09eb05;
+            font-family: 'Dancing Script', cursive; /* Usar la nueva fuente */
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .yes {
+            background-color: lightgreen;
+        }
+        .yes:hover {
+            background-color: greenyellow;
+        }
+        .no {
+            background-color: red;
+            position: relative;
+        }
+        .message-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            font-size: 2rem;
+            color: #d7263d;
+            width: 80%;
+            margin-top: 20px;
+        }
+        .images {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+        }
+        .images img {
+            width: 350px; /* Tamaño de las imágenes */
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .message {
+            flex: 1;
+            text-align: center;
+            color: white; /* Color de texto blanco */
+            font-family: 'Dancing Script', cursive; /* Usar la fuente más bonita */
+            font-weight: bold; /* Letra más gruesa */
+            font-size: 3rem; /* Aumentar el tamaño del texto */
+        }
+        .message p {
+            font-family: 'Dancing Script', cursive; /* Asegura que el párrafo también tenga la misma fuente */
+            font-weight: normal; /* Normaliza el peso del texto */
+            font-size: 2rem; /* Aumentar tamaño de fuente del párrafo */
+        }
+    </style>
+</head>
+<body>
+    <!-- Pregunta inicial -->
+    <div id="question">
+        <h1>¿Quieres ser mi San Valentín?</h1>
+        <div class="button-container">
+            <button class="yes" onclick="showLoveMessage()">Sí</button>
+            <button class="no">No</button>
+        </div>
+    </div>
+
+    <!-- Mensaje de amor con imágenes a los costados -->
+    <div id="loveMessage" class="message-container" style="display: none;">
+        <div class="images">
+            <img src="lola.jpg" alt="Flor 1">
+        </div>
+        <div class="message">
+            <h1>💖¡Te quiero mucho mi amor platonico 'Gabi'!💖</h1>
+            <p>Eres esa persona que espere "Mas de 4 años " y cada dia que pasa me enamoro mas de de Tí mi amor Gabi...............gaaaaaaaaaaaaa xd. 🌹</p>
+        </div>
+        <div class="images">
+            <img src="gabi.jpg" alt="Flor 2">
+        </div>
+    </div>
+
+    <script>
+        const noButton = document.querySelector('.no');
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth - 20);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight - 20);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        // Mostrar mensaje de amor y ocultar la pregunta
+        function showLoveMessage() {
+            document.getElementById('question').style.display = 'none';
+            document.getElementById('loveMessage').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
+
